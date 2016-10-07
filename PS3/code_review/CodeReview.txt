@@ -1,0 +1,17 @@
+StopwatchCreator.java
+	Javadoc on StopwatchCreator could be more descriptive about class functionality.
+	Using the default equals and hashCode implementation would have been correct. Two stopwatches are equal if they are the same instance of a stopwatch. Two different stopwatches that happen to have the same internal state are not equal.
+	In getLapTimes(), if stopwatch is running, then we should just return the laptimes that is already in the list, no need to record the one that is running.
+	Line 9 is over 100 characters.
+	Don't need to throws IllegalArgumentException on function declaration since the code will do the exception.
+	In stop(), time can be "System.currentTimeMillis() - startTime + pastTime" and just do "lapTime.add(time)" because pastTime will change when calling start() again.
+	Don't need comment for constructor.
+	Incorrect import ordering. edu.nyu files should be imported before java ones.
+	Should create a lock object to synchronize only the codes that need to be synchronized, instead of synchronized the whole function.
+
+StopwatchFactory.java
+	getStopwatch(): better to have a Map from ID to stopwatch and then to just check if the ID is already a key in that map.
+	Should not use @SuppressWarnings("unchecked") 
+	Don't need to throws IllegalArgumentException on function declaration since the code will do the exception.
+	Incorrect import ordering. edu.nyu files should be imported before java ones.
+	Should create a lock object to synchronize only the codes that need to be synchronized, instead of synchronized the whole function.

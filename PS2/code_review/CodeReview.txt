@@ -1,0 +1,27 @@
+Please enter your code review in this file as plain text
+and make sure to include it when you commit your project.
+
+File:
+AddressBook.java
+Code Review:
+Line 34: Remove function seems complicated, there is no need to use indexOfElementToBeRemoved because equals will return false if the contact is not found in address book.
+Line 60, 76, 79, 80: Should use "contain" instead of "match", the later means exactly same.
+Line 82-83: Should create a function toString so that it can be reuse in the future.
+Line 86-87: Indent wrong, should indent 4 spaces
+Line 102: Should indent 2 spaces.
+Line 103-105, 123-125: Should write some comments for exception. 
+
+File:
+Contact.java
+Code Review:
+Line 8: In the comment, it says “None of the fields in Contact are mandatory”, however, the validation is set for name, phone number, email address and notes.
+Line 26: Name doesn't need to be initialize with blank and should declare it as final.
+Line 27: Should not comment like this, this is not the code for programmer, should put description of validations in the comment of contact.
+Line 54-59: If the input is blank, parseInt will throw exception.
+Line 70-72: Email address should be able to be blank.
+Line 84-86: Notes should be able to be blank.
+Line 102-105: Don't need "this".
+Line 145-150: hashcode is wrong, should use int result = 17, result = 31 * result + name.hashCode() etc.
+Line 162-167: Should use if...else if...else instead of if...if...if...
+Missing postal address.
+Should override toString function
